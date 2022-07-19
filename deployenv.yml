@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myenvconfig
+spec:
+  containers:
+    - name: c1
+      image: ubuntu
+      command : ["/bin/bash", "-c", "while true; do echo Hello-Bhupinder; sleep 5 ; done"]
+      env:
+      - name: MYENV
+        valueFrom:
+          configMapKeyRef:
+            name: mymap
+            key: sample.conf
