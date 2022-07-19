@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: bhupi
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - image: ubuntu
+              name: bhupi
+              command: ["/bin/bahs","-c","aditya; sleep 5"]
+          restartPolicy: Never
+
