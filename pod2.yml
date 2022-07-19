@@ -1,0 +1,21 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: newpod1
+  labels:
+    env: developments
+    class: pods 
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo hello-aditya; sleep 5; done"]
+    - name: c01
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo hello-pratap; sleep 5; done"] 
+    - name: c02
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo hello-singh; sleep 5; done"]
+      env:
+        - name: MYNAME
+          value: aditya
