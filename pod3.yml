@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: newpod3
+  labels:
+    myname: aditya
+spec:
+  containers:
+    - name: c00
+      image: httpd
+      ports:
+        - containerPort: 80
